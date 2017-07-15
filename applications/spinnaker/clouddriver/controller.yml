@@ -32,7 +32,7 @@ spec:
         resources: {}
         terminationMessagePath: "/dev/termination-log"
         volumeMounts:
-        - mountPath: "/opt/clouddriver/config"
+        - mountPath: "/opt/spinnaker/config"
           name: "spinnaker-config"
         - mountPath: "/root/.kube"
           name: "minikube-config"

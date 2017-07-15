@@ -32,7 +32,7 @@ spec:
         resources: {}
         terminationMessagePath: "/dev/termination-log"
         volumeMounts:
-        - mountPath: "/opt/front50/config"
+        - mountPath: "/opt/spinnaker/config"
           name: "spinnaker-config"
       dnsPolicy: "ClusterFirst"
       imagePullSecrets:

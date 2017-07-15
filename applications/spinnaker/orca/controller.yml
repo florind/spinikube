@@ -32,7 +32,7 @@ spec:
         resources: {}
         terminationMessagePath: "/dev/termination-log"
         volumeMounts:
-        - mountPath: "/opt/orca/config"
+        - mountPath: "/opt/spinnaker/config"
           name: "spinnaker-config"
       dnsPolicy: "ClusterFirst"
       imagePullSecrets:
