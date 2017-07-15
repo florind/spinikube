@@ -32,7 +32,7 @@ def c(cmd):
 
 o("minikube delete")
 
-o("minikube start --memory 10000 --cpus 4 --disk-size=60g")
+o("minikube start --memory 10000 --cpus 2 --disk-size=60g")
 
 #o("kubectl delete namespace spinnaker")
 #time.sleep(30)
@@ -177,9 +177,9 @@ c("applications/start/service.json")
 poll()
 
 #add example pipeline
-o("./podexec spinnaker apt-get update")
-o("./podexec spinnaker apt-get install -y git")
-o("./podexec spinnaker git clone git@github.com:moondev/SpiniKube.git /SpiniKube")
-o("./podexec spinnaker cqlsh -e 'COPY front50.pipeline FROM \'/SpiniKube/pipelines/pipelines.csv\' WITH HEADER = \'true\';'")
+o("./podexec cassandra apt-get update")
+o("./podexec cassandra apt-get install -y git")
+o("./podexec cassandra git clone https://github.com/moondev/SpiniKube.git /SpiniKube")
+o("./podexec cassandra cqlsh -e 'COPY front50.pipeline FROM /SpiniKube/pipelines/pipelines.csv;'")
 
 o("minikube service spinnaker-start -n spinnaker")
